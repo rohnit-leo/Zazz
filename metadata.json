@@ -1,0 +1,6 @@
+{
+  "name": "ZAZZ Luxury Unisex Salon",
+  "description": "An ultra-premium, luxury unisex salon offering world-class beauty, hair, skin, and wellness experiences.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
