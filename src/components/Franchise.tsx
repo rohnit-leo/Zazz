@@ -1,8 +1,30 @@
+import { useState, FormEvent } from 'react';
 import { motion } from 'motion/react';
-import { TrendingUp, Users, MapPin, Building2, Briefcase, Phone } from 'lucide-react';
+import { TrendingUp, Users, MapPin, Building2, Briefcase } from 'lucide-react';
 import { cn } from '../lib/utils';
 
 export default function Franchise() {
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [email, setEmail] = useState('');
+  const [city, setCity] = useState('');
+  const [budget, setBudget] = useState('');
+
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    const formattedMessage = `Hello ZAZZ Salon! I am interested in a Franchise Business Opportunity.%0A%0A` +
+      `*Franchise Enquiry Details:*%0A` +
+      `• *Name:* ${encodeURIComponent(name || 'Not specified')}%0A` +
+      `• *Phone:* ${encodeURIComponent(phone || 'Not specified')}%0A` +
+      `• *Email:* ${encodeURIComponent(email || 'Not specified')}%0A` +
+      `• *City of Interest:* ${encodeURIComponent(city || 'Not specified')}%0A` +
+      `• *Investment Budget:* ${encodeURIComponent(budget || 'Not specified')}%0A%0A` +
+      `Please send me the comprehensive Franchise Deck and financial details.`;
+
+    const whatsappUrl = `https://wa.me/918686121420?text=${formattedMessage}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   return (
     <section id="franchise" className="py-32 bg-ivory text-black-matte border-t border-charcoal/5 relative overflow-hidden">
       {/* Decorative background element */}
@@ -19,10 +41,10 @@ export default function Franchise() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 mb-24 border border-charcoal/10 bg-white shadow-sm">
           {[
-            { icon: TrendingUp, val: "₹6L+", label: "Avg. Monthly Revenue" },
+            { icon: TrendingUp, val: "8 Lac +", label: "Avg. Monthly Revenue" },
             { icon: Users, val: "3.5k+", label: "Happy Clients Monthly" },
             { icon: Building2, val: "100%", label: "Setup Support" },
-            { icon: MapPin, val: "3", label: "Upcoming Locations" }
+            { icon: MapPin, val: "3+", label: "Expansion Cities (Guntur, Eluru, Rajahmundry)" }
           ].map((stat, idx) => (
             <motion.div
               key={idx}
@@ -36,7 +58,7 @@ export default function Franchise() {
               )}
             >
               <stat.icon className="w-8 h-8 text-black-matte mx-auto mb-6 opacity-80" strokeWidth={1.5} />
-              <div className="font-serif text-4xl mb-2 text-black-matte">{stat.val}</div>
+              <div className="font-serif text-3xl md:text-4xl mb-2 text-black-matte">{stat.val}</div>
               <div className="text-[10px] font-bold text-charcoal/50 tracking-[0.2em] uppercase">{stat.label}</div>
             </motion.div>
           ))}
@@ -49,8 +71,25 @@ export default function Franchise() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h3 className="text-4xl font-serif mb-10 tracking-tighter text-black-matte">End-to-End Support</h3>
-            <div className="space-y-8">
+            <h3 className="text-4xl font-serif mb-8 tracking-tighter text-black-matte">End-to-End Turnkey Support</h3>
+            
+            {/* Real Floor Plan Preview Card */}
+            <div className="mb-8 p-4 bg-white border border-charcoal/10 shadow-sm flex items-center gap-4">
+              <div className="w-28 h-20 bg-beige overflow-hidden shrink-0 border border-charcoal/10">
+                <img 
+                  src="https://falh4wp7xhmztgpi.public.blob.vercel-storage.com/saloonimagesss/04_floor_plan.jpg" 
+                  alt="ZAZZ Salon Architectural Layout"
+                  className="w-full h-full object-contain p-1 bg-white" 
+                />
+              </div>
+              <div>
+                <span className="text-[9px] font-bold uppercase tracking-widest text-gold-rich block">Architectural Precision</span>
+                <h4 className="font-serif text-sm font-bold text-black-matte">Bespoke 3D Floor Plans & Layout Architecture</h4>
+                <p className="text-[11px] text-charcoal/60 mt-1">We provide complete architectural blueprints and interior design execution.</p>
+              </div>
+            </div>
+
+            <div className="space-y-6">
               {[
                 { title: "Location & Setup", desc: "Assistance in site selection, premium interior design architecture, and equipment sourcing." },
                 { title: "Hiring & Training", desc: "Recruitment of top-tier stylists and comprehensive training in international techniques." },
@@ -77,27 +116,63 @@ export default function Franchise() {
           >
             <h3 className="text-3xl font-serif mb-6 text-black-matte">Request Franchise Deck</h3>
             <p className="text-sm text-charcoal/60 font-light mb-10">
-              Fill out the form below to receive our comprehensive investment portfolio and schedule a private consultation.
+              Fill out the form below to receive our comprehensive investment portfolio directly via WhatsApp.
             </p>
 
-            <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
+            <form className="space-y-8" onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                <input type="text" placeholder="FULL NAME" className="w-full border-b border-charcoal/20 bg-transparent py-2 focus:outline-none focus:border-black-matte transition-colors text-[11px] font-bold tracking-widest placeholder:text-charcoal/30" />
-                <input type="tel" placeholder="PHONE NUMBER" className="w-full border-b border-charcoal/20 bg-transparent py-2 focus:outline-none focus:border-black-matte transition-colors text-[11px] font-bold tracking-widest placeholder:text-charcoal/30" />
+                <input 
+                  type="text" 
+                  required
+                  placeholder="FULL NAME *" 
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="w-full border-b border-charcoal/20 bg-transparent py-2 focus:outline-none focus:border-black-matte transition-colors text-[11px] font-bold tracking-widest placeholder:text-charcoal/30 text-black-matte" 
+                />
+                <input 
+                  type="tel" 
+                  required
+                  placeholder="PHONE NUMBER *" 
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  className="w-full border-b border-charcoal/20 bg-transparent py-2 focus:outline-none focus:border-black-matte transition-colors text-[11px] font-bold tracking-widest placeholder:text-charcoal/30 text-black-matte" 
+                />
               </div>
-              <input type="email" placeholder="EMAIL ADDRESS" className="w-full border-b border-charcoal/20 bg-transparent py-2 focus:outline-none focus:border-black-matte transition-colors text-[11px] font-bold tracking-widest placeholder:text-charcoal/30" />
+              <input 
+                type="email" 
+                required
+                placeholder="EMAIL ADDRESS *" 
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full border-b border-charcoal/20 bg-transparent py-2 focus:outline-none focus:border-black-matte transition-colors text-[11px] font-bold tracking-widest placeholder:text-charcoal/30 text-black-matte" 
+              />
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                <input type="text" placeholder="CITY OF INTEREST" className="w-full border-b border-charcoal/20 bg-transparent py-2 focus:outline-none focus:border-black-matte transition-colors text-[11px] font-bold tracking-widest placeholder:text-charcoal/30" />
-                <select className="w-full border-b border-charcoal/20 bg-transparent py-2 focus:outline-none focus:border-black-matte transition-colors text-[11px] font-bold tracking-widest text-black-matte appearance-none">
-                  <option value="" disabled selected className="text-charcoal/30">INVESTMENT BUDGET</option>
-                  <option value="30-50">₹30L - ₹50L</option>
-                  <option value="50-80">₹50L - ₹80L</option>
-                  <option value="80+">₹80L+</option>
+                <input 
+                  type="text" 
+                  required
+                  placeholder="CITY OF INTEREST *" 
+                  value={city}
+                  onChange={(e) => setCity(e.target.value)}
+                  className="w-full border-b border-charcoal/20 bg-transparent py-2 focus:outline-none focus:border-black-matte transition-colors text-[11px] font-bold tracking-widest placeholder:text-charcoal/30 text-black-matte" 
+                />
+                <select 
+                  required
+                  value={budget}
+                  onChange={(e) => setBudget(e.target.value)}
+                  className="w-full border-b border-charcoal/20 bg-transparent py-2 focus:outline-none focus:border-black-matte transition-colors text-[11px] font-bold tracking-widest text-black-matte appearance-none"
+                >
+                  <option value="" disabled className="text-charcoal/30">INVESTMENT BUDGET *</option>
+                  <option value="₹30L - ₹50L">₹30L - ₹50L</option>
+                  <option value="₹50L - ₹80L">₹50L - ₹80L</option>
+                  <option value="₹80L+">₹80L+</option>
                 </select>
               </div>
               
-              <button className="w-full bg-black-matte text-white py-4 mt-8 text-[11px] font-bold tracking-[0.2em] uppercase hover:bg-gold-rich transition-colors duration-300 flex items-center justify-center gap-3">
-                <Briefcase className="w-4 h-4" /> Request Details
+              <button 
+                type="submit"
+                className="w-full bg-[#25D366] text-white py-4 mt-8 text-[11px] font-bold tracking-[0.2em] uppercase hover:bg-[#20ba5a] transition-colors duration-300 flex items-center justify-center gap-3 shadow-lg"
+              >
+                <Briefcase className="w-4 h-4" /> Request Details via WhatsApp
               </button>
             </form>
           </motion.div>

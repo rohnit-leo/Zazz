@@ -70,7 +70,7 @@ export default function Hero() {
           </div>
           <div className="w-[1px] h-10 bg-charcoal/20 hidden md:block"></div>
           <div className="flex flex-col">
-            <span className="text-3xl font-serif text-black-matte">₹6L</span>
+            <span className="text-3xl font-serif text-black-matte">8 Lac +</span>
             <span className="text-[10px] uppercase tracking-widest opacity-60 font-bold text-black-matte">Avg. Monthly Rev.</span>
           </div>
           <div className="w-[1px] h-10 bg-charcoal/20 hidden md:block"></div>
@@ -97,7 +97,7 @@ export default function Hero() {
              transition={{ duration: 1.5, ease: "easeOut" }}
              className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-[10000ms] group-hover:scale-105"
              style={{
-               backgroundImage: 'url("https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=2874&auto=format&fit=crop")',
+               backgroundImage: 'url("https://falh4wp7xhmztgpi.public.blob.vercel-storage.com/saloonimagesss/01_reception_lounge.jpg")',
              }}
            />
            <div className="absolute inset-0 bg-black-matte/20 mix-blend-multiply transition-opacity group-hover:opacity-0"></div>

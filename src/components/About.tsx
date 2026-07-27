@@ -27,9 +27,9 @@ export default function About() {
           >
             <div className="aspect-[3/4] overflow-hidden bg-beige border border-charcoal/5 relative">
               <img
-                src="https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?q=80&w=2864&auto=format&fit=crop"
-                alt="ZAZZ Luxury Interior"
-                className="w-full h-full object-cover grayscale transition-all duration-[5000ms] hover:grayscale-0 hover:scale-105"
+                src="https://falh4wp7xhmztgpi.public.blob.vercel-storage.com/saloonimagesss/saloon%20images/WhatsApp%20Image%202026-07-27%20at%2012.18.57%20PM%20%283%29.jpeg"
+                alt="ZAZZ Luxury Hair & Styling Studio"
+                className="w-full h-full object-cover transition-all duration-[5000ms] hover:scale-105"
               />
               <div className="absolute inset-0 bg-black-matte/5" />
             </div>

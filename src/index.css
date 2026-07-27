@@ -4,20 +4,39 @@
   --font-serif: "Playfair Display", serif;
   --font-sans: "Inter", sans-serif;
 
-  --color-ivory: #FAF7F2;
-  --color-beige: #E9DDCB;
-  --color-champagne: #E5D3B3;
-  --color-gold-rich: #C8A96A;
-  --color-gold-soft: #D8B77E;
-  --color-black-matte: #111111;
-  --color-charcoal: #222222;
-  --color-emerald-muted: #5F8D62;
+  --color-ivory: #FDFBF7;
+  --color-beige: #F5EFEB;
+  --color-champagne: #F3E5AB;
+  --color-gold-rich: #D4AF37;
+  --color-gold-soft: #E5C158;
+  --color-gold-glow: #F3D073;
+  --color-gold-amber: #B8860B;
+  --color-black-matte: #121212;
+  --color-charcoal: #1C1C1E;
+  --color-charcoal-light: #2C2C2E;
+  --color-emerald-muted: #4A7A54;
 }
 
 @utility glass-nav {
-  background: rgba(250, 247, 242, 0.8);
+  background: rgba(253, 251, 247, 0.85);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+@utility glass-card {
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(200, 169, 106, 0.2);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+@utility gold-gradient-bg {
+  background: linear-gradient(135deg, #D4AF37 0%, #F5EFEB 50%, #B8860B 100%);
+}
+
+@utility gold-text {
+  background: linear-gradient(135deg, #D4AF37 0%, #E5C158 50%, #B8860B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 @utility hero-mask {
@@ -30,6 +49,8 @@ html {
 
 body {
   font-family: var(--font-sans);
+  background-color: #FDFBF7;
+  color: #121212;
 }
 
 h1, h2, h3, h4, h5, h6, .font-serif {

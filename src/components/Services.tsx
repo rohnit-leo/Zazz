@@ -6,7 +6,7 @@ import { cn } from '../lib/utils';
 const services = [
   {
     category: "Hair Artistry",
-    image: "https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=2938&auto=format&fit=crop",
+    image: "https://falh4wp7xhmztgpi.public.blob.vercel-storage.com/saloonimagesss/02_hair_studio.jpg",
     items: [
       { name: "Hair Styling & Cuts", duration: "60 mins", price: "From ₹1,500", desc: "Precision cuts and styling tailored to your facial structure and lifestyle." },
       { name: "Luxury Hair Coloring", duration: "120+ mins", price: "From ₹4,000", desc: "Balayage, ombre, and global coloring using premium ammonia-free products." },
@@ -16,7 +16,7 @@ const services = [
   },
   {
     category: "Skin & Esthetics",
-    image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=2940&auto=format&fit=crop",
+    image: "https://falh4wp7xhmztgpi.public.blob.vercel-storage.com/saloonimagesss/saloon%20images/02_Facial_Treatment_Room.jpg",
     items: [
       { name: "Luxury & Korean Facials", duration: "90 mins", price: "From ₹3,500", desc: "Advanced glass-skin facials using authentic Korean formulations." },
       { name: "Hydra Facial", duration: "75 mins", price: "From ₹4,500", desc: "Medical-grade resurfacing that clears out your pores and hydrates your skin." },
@@ -25,7 +25,7 @@ const services = [
   },
   {
     category: "Bridal & Makeup",
-    image: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?q=80&w=2942&auto=format&fit=crop",
+    image: "https://falh4wp7xhmztgpi.public.blob.vercel-storage.com/saloonimagesss/12_bridal_studio.jpg",
     items: [
       { name: "Bridal Studio Experiences", duration: "Half/Full Day", price: "Packages", desc: "Comprehensive bridal packages including pre-wedding prep and day-of styling." },
       { name: "Luxury Makeup Artistry", duration: "120 mins", price: "From ₹5,000", desc: "HD and Airbrush makeup by master artists for your most important events." },
@@ -33,7 +33,7 @@ const services = [
   },
   {
     category: "Wellness & Spa",
-    image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=2940&auto=format&fit=crop",
+    image: "https://falh4wp7xhmztgpi.public.blob.vercel-storage.com/saloonimagesss/03_wash_area.jpg",
     items: [
       { name: "Luxury Spa Therapies", duration: "60-120 mins", price: "From ₹3,000", desc: "Bespoke body massages using aromatic oils to melt away stress." },
       { name: "Foot Reflexology", duration: "45 mins", price: "From ₹1,200", desc: "Targeted pressure point therapy to restore balance and energy." },
